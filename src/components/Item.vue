@@ -11,6 +11,7 @@
 <script>
     export default {
         name: "item",
+        inject: ['test'],
         props: {
             index: Number,
             comment: Object,
@@ -19,6 +20,9 @@
         data(){
             return {};
         },
+      mounted(){
+        console.log('-----inject-----', this.test)
+      },
         methods: {
             deleteItem(){
                 const { comment } = this;

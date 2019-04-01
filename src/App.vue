@@ -3,7 +3,7 @@
     <keep-alive>
       <router-view></router-view>
     </keep-alive>
-    <div style="height: 100px"></div>
+    <div style="height: 200px"></div>
     <tabbar class="vux-demo-tabbar" icon-class="vux-center" slot="bottom" style="position: fixed">
       <tabbar-item :link="{path:'/home'}">
         <span slot="icon" style="position:relative;top: -2px;" class="iconfont">&#xeb93;</span>
@@ -43,32 +43,6 @@
       }
     },
     beforeCreate() {
-
-      function getNum() {
-        var p = new Promise(function (resolve, reject) {
-          setTimeout(function () {
-            var randomNum = Math.random() * 10;
-            console.log(randomNum)
-            var num = Math.ceil(randomNum); //生成1-10的随机数
-            console.log(num)
-            if (num > 5) {
-              resolve(num)
-            } else {
-              reject('数字不对哦')
-            }
-          }, 2000)
-        })
-        return p;
-      }
-
-      getNum().then(function (data) {
-        console.log('resolved');
-        console.log(data)
-      }, function (data) {
-        console.log('rejected')
-        console.log(data);
-      });
-
 
     },
     components: {

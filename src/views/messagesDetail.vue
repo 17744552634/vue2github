@@ -1,7 +1,7 @@
 <template>
     <div>
         <h3>ID:{{$route.params.id}}</h3>
-        <ul>
+        <ul id="detail-ul">
             <li>detail id: {{detail.id}}</li>
             <li>detail title: {{detail.title}}</li>
             <li>detail content: {{detail.content}}</li>
@@ -35,7 +35,9 @@
             }
         },
         mounted(){
-
+          console.log('=====================')
+          console.log(typeof this.$router, this.$router)
+          console.log(typeof this.$route, this.$route)
         },
         watch: {
             $route: function (value) {

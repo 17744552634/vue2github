@@ -14,7 +14,12 @@ import Messages from '../views/messages'
 import MessagesDetail from '../views/messagesDetail'
 
 
+function loadView(view) {
+  return () => import(`@/views/${view}.vue`)
+}
+
 var router = new VueRouter({
+  // mode: 'history',
   routes: [
     {
       name: 'app',
@@ -25,12 +30,12 @@ var router = new VueRouter({
     {
       name: 'about',
       path: '/about',
-      component: About,
+      component: loadView('about'),
       children: [
         {
           name: 'news',
           path: '/about/news',
-          component: News
+          component: loadView('news')
         },
         {
           name: 'messages',
@@ -65,10 +70,6 @@ var router = new VueRouter({
             next()
           }
         },
-        // {
-        //   path: '/',
-        //   redirect: '/about/news'
-        // },
       ]
     },
     {

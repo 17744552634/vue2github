@@ -5,6 +5,7 @@
         <label>评论内容</label><br/>
         <textarea placeholder="评论内容" class="pl-content" v-model="content"></textarea>
         <button @click="add">提交</button>
+      <button @click="hideNow">hide</button>
     </form>
 </template>
 
@@ -18,9 +19,13 @@
             }
         },
         props: {
-            addComment: Function
+          addComment: Function,
+          hideInfor: Function
         },
         methods: {
+          hideNow(){
+            this.hideInfor();
+          },
             add(){
                 const name = this.name.trim();
                 const content = this.content.trim();
@@ -35,6 +40,7 @@
                 this.addComment(comment);
                 this.name = '';
                 this.content = '';
+                this.$emit('selfDefine', 'this is a 自定义事件')
             }
         }
     }

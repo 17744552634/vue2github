@@ -11,6 +11,9 @@
         <button @click="go(v.id)">push查看</button>
       </li>
     </ul>
+    <div class="parent1-box">
+      <div class="child1-box">块级元素水平居中</div>
+    </div>
     <hr/>
     <router-view></router-view>
   </div>
@@ -71,6 +74,12 @@
       console.log('el:',this.$el)
       console.log('data',this.$data)
       console.log('data--testText',this.infor.testText)
+
+
+      var one=document.getElementById('one');
+      var two=document.getElementById('two');
+      var three=document.getElementById('three');
+      var four=document.getElementById('four');
 
     },
     beforeUpdate(){
@@ -138,5 +147,21 @@
 </script>
 
 <style scoped>
+
+  .parent1-box {
+    width: 200px;
+    height: 200px;
+    background-color: #f00;
+  }
+  .child1-box {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    width: 150px;
+    height: 150px;
+    background-color: #f54;
+    -webkit-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+  }
 
 </style>

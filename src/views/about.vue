@@ -7,6 +7,7 @@
           <router-link to="/about/messages" class="link-style">Message</router-link>
           <a href="javascript:;" @click="go(1)">跳转News</a>
           <a href="javascript:;" @click="go(2)">跳转Messages</a>
+          <span>测试。。。</span>
         </div>
         <div>
             <router-view></router-view>
@@ -30,7 +31,7 @@
         go(num){
           // this.goFlag = true
           if (num === 1){
-            this.$router.push({ name: 'news' })
+            this.$router.replace({ name: 'news' })
           }else if (num === 2){
             this.$router.push({ name: 'messages' })
           }
